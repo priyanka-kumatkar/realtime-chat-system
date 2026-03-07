@@ -10,8 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="User")
-public class User {
+@Table(name="users")
+public class Users {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,12 +27,6 @@ public class User {
 	@Column(name="password")
 	private String password;
 	
-	@Column(name="timestamp_created_at")
-	private LocalDateTime timestampCreatedAt;
-
-	public Long getId() {
-		return id;
-	}
 
 	public String getUserName() {
 		return userName;
@@ -56,14 +50,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public LocalDateTime getTimestampCreatedAt() {
-		return timestampCreatedAt;
-	}
-
-	public void setTimestampCreatedAt(LocalDateTime timestampCreatedAt) {
-		this.timestampCreatedAt = timestampCreatedAt;
 	}
 
 }

@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/create_users.sql
+  - include:
+      file: db/changelog/create_messages.sql
+  - include:
+	  file: db/changelog/create_chatroom.sql
+  - include:
+	  file: db/changelog/create_chat_room_members.sql

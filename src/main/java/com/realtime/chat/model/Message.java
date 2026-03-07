@@ -1,6 +1,9 @@
 package com.realtime.chat.model;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,14 +15,18 @@ public class Message {
 	@Id
 	private UUID id;
 	
-	private Long senderIdl;
+	@Column(name="sender_id")
+	private Long senderId;
 	
-	private UUID roomId;
+	@Column(name="char_room_id")
+	private UUID chatRoomId;
 	
     @Column(columnDefinition = "TEXT")
 	private String content;
     
-	private String timestampCreateAt;
+    @CreationTimestamp
+    @Column(name="created_at")
+	private LocalDateTime createAt;
 
 	public UUID getId() {
 		return id;
@@ -29,20 +36,20 @@ public class Message {
 		this.id = id;
 	}
 
-	public Long getSenderIdl() {
-		return senderIdl;
+	public Long getSenderId() {
+		return senderId;
 	}
 
-	public void setSenderIdl(Long senderIdl) {
-		this.senderIdl = senderIdl;
+	public void setSenderId(Long senderId) {
+		this.senderId = senderId;
 	}
 
-	public UUID getRoomId() {
-		return roomId;
+	public UUID getChatRoomId() {
+		return chatRoomId;
 	}
 
-	public void setRoomId(UUID roomId) {
-		this.roomId = roomId;
+	public void setChatRoomId(UUID chatRoomId) {
+		this.chatRoomId = chatRoomId;
 	}
 
 	public String getContent() {
@@ -53,13 +60,12 @@ public class Message {
 		this.content = content;
 	}
 
-	public String getTimestampCreateAt() {
-		return timestampCreateAt;
+	public LocalDateTime getCreateAt() {
+		return createAt;
 	}
 
-	public void setTimestampCreateAt(String timestampCreateAt) {
-		this.timestampCreateAt = timestampCreateAt;
+	public void setCreateAt(LocalDateTime createAt) {
+		this.createAt = createAt;
 	}
-	
-	
+
 }

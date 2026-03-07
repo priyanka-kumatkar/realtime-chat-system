@@ -3,6 +3,9 @@ package com.realtime.chat.model;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import org.hibernate.annotations.CreationTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -18,9 +21,12 @@ public class ChatRoom {
 	@Id
 	private UUID id;
 	
+	@Column(name="room_name")
 	private String roomName;
 	
-	private LocalDateTime timestampCreatedAt;
+	@CreationTimestamp
+	@Column(name="created_at")
+	private LocalDateTime createdAt;
 
 
 	public UUID getId() {
@@ -39,14 +45,12 @@ public class ChatRoom {
 		this.roomName = roomName;
 	}
 
-	public LocalDateTime getTimestampCreatedAt() {
-		return timestampCreatedAt;
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setTimestampCreatedAt(LocalDateTime timestampCreatedAt) {
-		this.timestampCreatedAt = timestampCreatedAt;
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
-
-	
 
 }

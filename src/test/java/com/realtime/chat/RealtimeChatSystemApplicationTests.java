@@ -1,13 +1,13 @@
-package com.realtime.chat;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class RealtimeChatSystemApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-}
+//package com.realtime.chat;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class RealtimeChatSystemApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}

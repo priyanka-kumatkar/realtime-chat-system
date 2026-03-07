@@ -4,6 +4,6 @@ databaseChangeLog:
   - include:
       file: db/changelog/create_messages.sql
   - include:
-	  file: db/changelog/create_chatroom.sql
+      file: db/changelog/create_chat_rooms.sql
   - include:
-	  file: db/changelog/create_chat_room_members.sql
+      file: db/changelog/create_chat_room_members.sql
